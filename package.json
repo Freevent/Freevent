@@ -1,0 +1,60 @@
+{
+  "name": "freevent",
+  "version": "1.0.0",
+  "description": "Freevent App",
+  "main": "index.js",
+  "proxy": "http//localhost:3000",
+  "scripts": {
+    "test": "test",
+    "start": "NODE_ENV=production node server/server.js",
+    "build": "NODE_ENV=production webpack",
+    "dev": "concurrently \"NODE_ENV=development webpack server --open --hot\" \"nodemon ./server/server.js\""
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "build",
+      "client"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Freevent/Freevent.git"
+  },
+  "author": "Anna, Drew, Cavin, Kelly",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Freevent/Freevent/issues"
+  },
+  "homepage": "https://github.com/Freevent/Freevent#readme",
+  "dependencies": {
+    "axios": "^1.1.3",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^6.6.7",
+    "node-fetch": "^3.2.10",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.0.4",
+    "react-router-dom": "^6.4.2",
+    "redux": "^4.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.6",
+    "@babel/preset-env": "^7.19.4",
+    "@babel/preset-react": "^7.18.6",
+    "babel-loader": "^8.2.5",
+    "concurrently": "^7.4.0",
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.7.1",
+    "html-webpack-plugin": "^5.5.0",
+    "image-webpack-loader": "^8.1.0",
+    "node-sass": "^7.0.3",
+    "nodemon": "^2.0.20",
+    "sass": "^1.55.0",
+    "sass-loader": "^13.1.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.11.1"
+  }
+}
