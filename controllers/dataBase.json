@@ -1,0 +1,24 @@
+{
+  "results": [
+    {
+      "eventName": "fun times",
+      "location": "mars"
+    },
+
+    {
+      "eventName": "ok times",
+      "location": "jupiter"
+    },
+
+    {
+      "eventName": "meh times",
+      "location": "saturn"
+    },
+
+    {
+      "eventName": "terrible times",
+      "location": "uranus"
+    }
+    
+  ]
+  }
