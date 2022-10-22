@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-
+import EventCard from './EventCard';
 
 const mapStateToProps = state => ({
     eventList: state.events.eventList,
@@ -13,7 +13,13 @@ const mapDispatchToProps = dispatch => ({
 
 const DisplayContainer = (props) => {
     return (
-        <div className='displayContainer'>in display</div>
+        <div className='displayContainer'>
+            <EventCard />
+            <EventCard />
+            <EventCard />
+            <EventCard />
+            <EventCard />
+        </div>
     )
 }
 
