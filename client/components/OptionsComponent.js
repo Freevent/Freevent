@@ -1,6 +1,14 @@
 import React, { useState } from 'react';
+import axios from 'axios'
 
 const OptionsComponent = (props) => {
+
+    const fetchData = () => {
+        axios('/events')
+            .then(data => console.log(data))
+            .catch(err => console.log(err))
+    }
+
     return (
         <div>
             <form className="optionsForm">
@@ -15,7 +23,7 @@ const OptionsComponent = (props) => {
                         <input type="radio" id="party" name="activity" value="party"/>
                         <label htmlFor="party">Party</label>
                     </div>
-                <input type="submit" value="Search!"/>
+                <input onClick={fetchData} type="submit" value="Search!"/>
                 <input type="reset" value="Clear"/>
             </form>
         </div>
