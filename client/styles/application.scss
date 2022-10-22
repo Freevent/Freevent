@@ -1,10 +1,14 @@
 @import '_variables';
 @import '_index';
 
+* {
+    box-sizing: border-box;
+    font-size: 2vh;
+}
+
 .maincontainer {  
     width: 90%;
-    height: 90%;
-    
+    margin: 5% auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
@@ -12,6 +16,7 @@
     grid-auto-flow: row;
     grid-template-areas:
       "sidebar heading heading heading"
+      "sidebar displayContainer displayContainer displayContainer"
       "sidebar displayContainer displayContainer displayContainer"
       "sidebar displayContainer displayContainer displayContainer"
       "sidebar displayContainer displayContainer displayContainer"
@@ -43,5 +48,34 @@
     grid-area: displayContainer; 
     display: flex;
     flex-wrap: wrap;
+
+    .eventCard {
+        height: 40%;
+        width: 20%;
+        border: 1px solid black;
+        display: flex;
+        flex-direction: column;
+        margin: 1%;
+
+        .info {
+            height: 75%;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid black;
+        }
+
+        .buttonWrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            button {
+                height: 100%;
+                border-radius: 50px;
+            }
+        }
+
+    }
+
 }
 
