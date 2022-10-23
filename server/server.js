@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-const eventController = require('../controllers/eventController');
+const eventController = require('./controllers/eventController');
 
 const PORT = 3000;
 
