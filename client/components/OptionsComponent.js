@@ -3,10 +3,9 @@ import axios from 'axios';
 import SubmitButton from './SubmitButton'
 
 const OptionsComponent = (props) => {
-
-    const fetchData = () => {
-        axios('/events')
-            .then(data => console.log(data))
+    const getData = () => {
+        axios.post('/events', { eventName: 'good times' })
+            .then(res => props.updateEvents(res.data))
             .catch(err => console.log(err))
     }
 
@@ -26,7 +25,7 @@ const OptionsComponent = (props) => {
                     </div>
                 <input type="reset" value="Clear"/>
             </form>
-            <SubmitButton click={fetchData} />
+            <SubmitButton getData={getData} />
         </div>
     )
 }

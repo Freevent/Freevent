@@ -9,3 +9,4 @@ export const deleteEventActionCreator = eventID => ({
     type: types.DELETE_EVENT,
     payload: eventID,
 });
+
