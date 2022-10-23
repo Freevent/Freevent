@@ -4,16 +4,16 @@ import SubmitButton from './SubmitButton'
 
 const OptionsComponent = (props) => {
     const getData = () => {
-        axios.post('/events', { eventName: 'good times' })
+        axios.post('/events', { requestName: 'fun times' })
             .then(res => props.updateEvents(res.data))
             .catch(err => console.log(err))
     }
 
     return (
-        <div>
+        <div className="submitWrapper">
             <form className="optionsForm">
-                <label htmlFor="city">Find your event:</label>
-                <input type="text" id="city" name="city"/>
+                <label htmlFor="city">Find your next event:</label>
+                <input type="text" id="city" name="city" placeholder="Enter city..."/>
                 <p>What do you want to do?</p>
                     <div>
                         <input type="radio" id="outside" name="activity" value="outside"/>
@@ -23,9 +23,9 @@ const OptionsComponent = (props) => {
                         <input type="radio" id="party" name="activity" value="party"/>
                         <label htmlFor="party">Party</label>
                     </div>
-                <input type="reset" value="Clear"/>
-            </form>
-            <SubmitButton getData={getData} />
+                <input id="reselect" type="reset" value="Reselect options"/>
+            </form>      
+                <SubmitButton getData={getData} />
         </div>
     )
 }

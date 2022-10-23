@@ -4,6 +4,7 @@
 * {
     box-sizing: border-box;
     font-size: 2.3vh;
+    font-family: 'Lato', sans-serif;
 }
 
 .maincontainer {  
@@ -27,6 +28,14 @@
 .heading { 
     border: 1px solid black;
     grid-area: heading; 
+    height: 100%;
+
+    h1 {
+        padding: 2%;
+        text-align: end;
+        font-size: 5vh;
+        font-family: 'Lobster', sans-serif;
+    }
 }
   
 .sidebar { 
@@ -35,12 +44,33 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 10%;
     
     .optionsForm {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        width: 100%;
+        padding: 10%;
 
+        input {
+           margin: 5%;
+        }
+
+        #city {
+            width: 120%;
+        }
+        
+    }
+
+    .submitWrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        button {
+            width: 75%;
+        }
     }
 }
   
@@ -49,10 +79,11 @@
     grid-area: displayContainer; 
     display: flex;
     flex-wrap: wrap;
+    padding: 5%;
 
     .eventCard {
-        height: 40%;
-        width: 20%;
+        height: 50%;
+        width: 25%;
         border: 1px solid black;
         display: flex;
         flex-direction: column;
@@ -61,8 +92,14 @@
         .info {
             height: 75%;
             display: flex;
-            align-items: center;
+            flex-direction: column;
+            justify-content: center;
             border-bottom: 1px solid black;
+            padding: 15%;
+
+            span {
+                font-weight: bold;
+            }
         }
 
         .buttonWrapper {
@@ -71,8 +108,16 @@
             align-items: center;
 
             button {
-                height: 100%;
-                border-radius: 50px;
+                height: 40px;
+                width: 40px;
+                margin: 1%;
+                border-radius: 50%;
+                border-style: none;
+                background-color: red;
+            }
+
+            button:hover {
+                background-color: darkred;
             }
         }
 

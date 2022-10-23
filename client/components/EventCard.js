@@ -6,9 +6,8 @@ const EventCard = (props) => {
     return (
         <div className='eventCard'>
             <div className='info'>
-                Name: {eventName}
-                <br/>
-                Location: {location}
+                <span>Name:</span> {eventName}
+                <span>Location:</span> {location}
             </div>
             <div className='buttonWrapper'>
                 <Button />
