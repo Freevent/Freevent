@@ -18,9 +18,9 @@ const eventController = {
     }
     catch(err) {
       return next({
-        log: 'error in wineController.getWine',
+        log: 'error in eventController.getEvents',
         status: 204,
-        message: { err: 'WineList not available' },
+        message: { err: 'EventList not available' },
       });
      };
     }
