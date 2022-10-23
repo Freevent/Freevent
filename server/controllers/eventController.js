@@ -7,12 +7,12 @@ const path = require('path');
 const eventController = {
 
   getEvents: async(req, res, next) => {
-    const { eventName } = req.body;
+    const { requestName } = req.body;
     try {
       let events = await fs.readFile(path.resolve(__dirname, './dataBase.json'))
       const parsedData = JSON.parse(events)
-      res.locals.eventList = parsedData.results.filter(el => el.eventName = eventName);
-      console.log('eventList', res.locals.eventList)
+      console.log(parsedData)
+      res.locals.eventList = parsedData.results.filter(el => el.eventName === requestName);
       return next();
     }
     catch(err) {
