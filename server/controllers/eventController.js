@@ -21,36 +21,28 @@ const eventController = {
         message: { err: `ERROR STATUS: ${error}` }
       });
       }
-    }
-  };
+    },
+
+  deleteEvent: async(req, res, next) => {
+    const {id} = req.body
+      try{
+        const deleteRow = `DELETE FROM simple_events WHERE id=${id};`;
+        let deleteResults = await db.query(deleteRow);
+        console.log('this is delete results' + JSON.stringify(deleteResults));
+        return next();
+      }catch(error) {
+        next({
+          log: 'Error caught in eventController.deleteEvent',
+          status: 400,
+          message: { err: `ERROR STATUS: ${error}`}
+        });
+      } 
+  }
    
-  //   deleteEvent: async(req, res, next) => {
-  //     try{
-  //       const { eventName } = req.body;
-
-  //     }
-  //   }
-  // };
+};
 
 
- /**getEvents: async(req, res, next) => {
-    const { requestName } = req.body;
-    try {
-      let events = await fs.readFile(path.resolve(__dirname, './dataBase.json'))
-      const parsedData = JSON.parse(events)
-      console.log(parsedData)
-      res.locals.eventList = parsedData.results.filter(el => el.eventName === requestName);
-      return next();
-    }
-    catch(err) {
-      return next({
-        log: 'error in eventController.getEvents',
-        status: 204,
-        message: { err: 'EventList not available' },
-      });
-     };
-    }
-  }; */ 
+
 
 
   module.exports = eventController;

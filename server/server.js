@@ -14,9 +14,11 @@ app.get('/events', eventController.getEvents, (req, res) => {
 });
 
 
-// app.delete('/deleteEvent', eventController.deleteEvent, (req, res) => {
-//   return res.status(202).json(console.log('event deleted'))
-// });
+app.delete('/delete', eventController.deleteEvent, (req, res) => {
+  return res.status(202).json(console.log('event deleted'))
+});
+
+
 
 //route handlers to serve entry-point files when in production mode. Dev mode is handled in the config file
 if('NODE_ENV=production') {
