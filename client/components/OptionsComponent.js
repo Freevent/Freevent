@@ -5,9 +5,22 @@ import SubmitButton from './SubmitButton'
 const OptionsComponent = (props) => {
     const getData = () => {
         let selection = document.querySelector('#city')
-        axios('/events')
+        const opts = document.querySelectorAll('input[type="radio"]')
+        let place;
+        for (let i = 0; i < opts.length; i++) {
+            if (opts[i].checked === true) {
+                place = opts[i].value;
+            }
+        }
+        if (typeof(place) === 'string') {
+            axios.post('/events/outside', { city: selection.value, locale: place})
+                .then(res => props.updateEvents(res.data))
+                .catch(err => console.log(err))
+        } else {
+            axios.post('/events', { city: selection.value})
             .then(res => props.updateEvents(res.data))
             .catch(err => console.log(err))
+        }
     }
 
     return (

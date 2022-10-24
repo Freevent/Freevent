@@ -14,9 +14,9 @@ app.get('/events', eventController.getEvents,
   return res.status(200).json(res.locals.eventList)
 });
 
-app.post('/events/city', eventController.getCityEvents, (req, res) => {
-  console.log(res.locals.eventList);
-  return res.status(200).json(res.locals.eventList)
+app.post('/events', eventController.getCityEvents, (req, res) => {
+
+  return res.status(200).json(res.locals.eventsList)
 });
 
 app.post('/events/outside', eventController.getOutdoorEvents, (req, res) => {
