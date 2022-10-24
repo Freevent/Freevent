@@ -4,8 +4,11 @@ import SubmitButton from './SubmitButton'
 
 const OptionsComponent = (props) => {
     const getData = () => {
-        axios.post('/events', { requestName: 'fun times' })
-            .then(res => props.updateEvents(res.data))
+        axios('/events')
+            .then(res => {
+                console.log(res.data);
+                //props.updateEvents(res.data)
+            })
             .catch(err => console.log(err))
     }
 

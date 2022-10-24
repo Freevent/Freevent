@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import Button from './Button';
 
 const EventCard = (props) => {
-    const { eventName, location } = props.event
+    const { eventName, summary, date, location } = props.event
     return (
         <div className='eventCard'>
             <div className='info'>
-                <span>Name:</span> {eventName}
-                <span>Location:</span> {location}
+                <span>Who:</span> {eventName}
+                <span>What:</span> {summary}
+                <span>When:</span> {date}
+                <span>Where:</span> {location}
             </div>
             <div className='buttonWrapper'>
                 <Button />
