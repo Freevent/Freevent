@@ -17,7 +17,7 @@ module.exports = {
     compress: true,
     port: 8080,
     proxy: {
-      '/': 'http://localhost:3000',
+      '/events': 'http://localhost:3000',
     },
   },
   plugins: [new HtmlWebpackPlugin({template: './client/index.html'})],
