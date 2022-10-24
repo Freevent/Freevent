@@ -1,12 +1,46 @@
-const fs = require ('fs/promises');
-const path = require('path');
+// const fs = require ('fs/promises');
+// const path = require('path');
 // const db = fs.readFile(path.resolve(__dirname, './dataBase.json'))
 
-//connection to SQL db will go here
+const { resolvePath } = require('react-router-dom');
+const db = require('../models/eventModel');
 
 const eventController = {
-
   getEvents: async(req, res, next) => {
+    try{
+      const queryEvents = 'SELECT * FROM simple_events LIMIT 10';
+      let queryResults = await db.query(queryEvent);
+      res.locals.eventList = queryResults.rows;
+      return next();
+    }catch(error)  {
+      next({
+        log: 'Error caught in eventController.getEvents',
+        status: 400,
+        message: { err: `ERROR STATUS: ${error}` }
+      });
+      }
+    }
+  };
+   
+
+  
+  
+
+
+
+
+
+
+  //   deleteEvent: async(req, res, next) => {
+  //     try{
+  //       const { eventName } = req.body;
+
+  //     }
+  //   }
+  // };
+
+
+ /**getEvents: async(req, res, next) => {
     const { requestName } = req.body;
     try {
       let events = await fs.readFile(path.resolve(__dirname, './dataBase.json'))
@@ -23,14 +57,7 @@ const eventController = {
       });
      };
     }
-  };
+  }; */ 
 
-  //   deleteEvent: async(req, res, next) => {
-  //     try{
-  //       const { eventName } = req.body;
-
-  //     }
-  //   }
-  // };
 
   module.exports = eventController;
