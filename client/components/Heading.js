@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 const Heading = (props) => {
     return (
         <div className='heading'>
-            <h1>Freevent baybeyyyyy</h1>
+            <h1>Freevent - Find it for Free!</h1>
         </div>
     )
 }

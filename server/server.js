@@ -8,9 +8,10 @@ const PORT = 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.get('/events', eventController.getEvents, (req, res) => {
+app.post('/events', eventController.getEvents, (req, res) => {
   return res.status(200).json(res.locals.eventList)
 });
+
 
 // app.delete('/deleteEvent', eventController.deleteEvent, (req, res) => {
 //   return res.status(202).json(console.log('event deleted'))

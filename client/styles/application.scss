@@ -3,12 +3,28 @@
 
 * {
     box-sizing: border-box;
+}
+
+button:active {
+    box-shadow: inset 0px 0px 10px #c1c1c1;
+    outline: none;
+}
+
+input:active {
+    box-shadow: inset 0px 0px 10px #c1c1c1;
+    outline: none;
+}
+
+body {
+    margin: 1%;
     font-size: 2.3vh;
+    font-family: 'Fredoka One', sans-serif;
 }
 
 .maincontainer {  
     width: 90%;
-    margin: 5% auto;
+    height: 90vh;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
@@ -21,58 +37,152 @@
       "sidebar displayContainer displayContainer displayContainer"
       "sidebar displayContainer displayContainer displayContainer"
       "sidebar displayContainer displayContainer displayContainer";
+
+    background-color: $headerColor;
+    border-radius: 10px;
   }
   
 .heading { 
-    border: 1px solid black;
+    border-radius: 10px;
     grid-area: heading; 
+    height: 100%;
+    background-color: $headerColor;
+
+    h1 {
+        padding-right: 5%;
+        text-align: end;
+        font-size: 6vh;
+        font-family: 'Lobster', sans-serif;
+        color: $headerFont;
+        text-shadow: -1px 1px 2px $fontBorder,
+        1px 1px 2px $fontBorder,
+        1px -1px 0 $fontBorder,
+        -1px -1px 0 $fontBorder;
+    }
 }
   
 .sidebar { 
-    border: 1px solid black;
+    border-radius: 10px;
     grid-area: sidebar; 
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 10%;
+    background-color: $headerColor;
+    font-size: 3vh;
+
+    h2 {
+        color: $headerFont;
+        font-family: 'Lobster', sans-serif;
+        text-shadow: -1px 1px 2px $fontBorder,
+        1px 1px 2px $fontBorder,
+        1px -1px 0 $fontBorder,
+        -1px -1px 0 $fontBorder;
+    }
     
     .optionsForm {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        width: 100%;
+        padding: 10%;
+        font-size: 2.5vh !important;
 
+        input {
+           margin: 5%;
+           font-size: 2.5vh !important;
+           font-family: 'Fredoka One', sans-serif
+        }
+
+        #reselect {
+            background-color: $headerColor;
+            border: 1px solid $headerFont;
+            border-radius: 5px;
+            color: $headerFont;
+            padding: 4%;
+            font-size: 2vh;
+            width: 90%;
+        }
+        #city {
+            width: 110%;
+        }
+        
+    }
+
+    .submitWrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        button {
+            width: 75%;
+            font-size: 3.5vh !important;
+            background-color: $headerFont;
+            border-radius: 5px;
+            border-style: none;
+            font-family: 'Lobster', sans-serif;
+            color: $buttonColor;
+            padding: 2%;
+        }
     }
 }
   
 .displayContainer { 
-    border: 1px solid black;
+    border-radius: 10px 0 10px 0;
     grid-area: displayContainer; 
     display: flex;
     flex-wrap: wrap;
+    padding: 5%;
+    background-color: $displayColor;
 
     .eventCard {
-        height: 40%;
-        width: 20%;
-        border: 1px solid black;
+        height: 50%;
+        width: 25%;
+        border-radius: 5px;
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
         margin: 1%;
+        background-color: $headerColor;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
         .info {
             height: 75%;
+            width: 80%;
             display: flex;
-            align-items: center;
-            border-bottom: 1px solid black;
+            flex-direction: column;
+            justify-content: center;
+            padding: 5%;
+            background-color: $displayColor;
+            border-radius: 5px 5px 0 0;
+
+            span {
+                font-weight: bold;
+            }
         }
 
         .buttonWrapper {
             display: flex;
             justify-content: center;
             align-items: center;
+            background-color: $headerFont;
+            width: 80%;
+            border-radius: 0 0 5px 5px;
 
             button {
-                height: 100%;
-                border-radius: 50px;
+                height: 40px;
+                width: 40px;
+                margin: 1%;
+                border-radius: 50%;
+                border-style: none;
+                background-color: $buttonColor
             }
+
+            button:hover {
+                background-color: $buttonHover;
+            }
+
         }
 
     }

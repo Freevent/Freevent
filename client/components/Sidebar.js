@@ -5,7 +5,7 @@ const Sidebar = (props) => {
     return (
         <div className='sidebar'>
             <h2>Search here!</h2>
-            <OptionsComponent />
+            <OptionsComponent updateEvents={props.updateEvents}/>
         </div>
     )
 }

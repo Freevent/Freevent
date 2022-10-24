@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 
 const SubmitButton = (props) => {
     return (
-        <button onClick={props.click}>
-            "Search!"
+        <button onClick={props.getData}>
+            Find events!
         </button>
     )
 }
