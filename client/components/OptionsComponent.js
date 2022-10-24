@@ -4,11 +4,9 @@ import SubmitButton from './SubmitButton'
 
 const OptionsComponent = (props) => {
     const getData = () => {
+        let selection = document.querySelector('#city')
         axios('/events')
-            .then(res => {
-                console.log(res.data);
-                //props.updateEvents(res.data)
-            })
+            .then(res => props.updateEvents(res.data))
             .catch(err => console.log(err))
     }
 

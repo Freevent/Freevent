@@ -11,7 +11,6 @@ const eventController = {
     try{
       const queryEvents = 'SELECT * FROM simple_events LIMIT 10;';
       let queryResults = await db.query(queryEvents);
-      console.log('this is queryResults' + JSON.stringify(queryResults.rows));
       res.locals.eventList = queryResults.rows;
       return next();
     }catch(error)  {
