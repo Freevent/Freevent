@@ -7,9 +7,11 @@ const db = require('../models/eventModel');
 
 const eventController = {
   getEvents: async(req, res, next) => {
+    console.log('this is eventController')
     try{
       const queryEvents = 'SELECT * FROM simple_events LIMIT 10';
       let queryResults = await db.query(queryEvent);
+      console.log('this is queryResults' + queryResults);
       res.locals.eventList = queryResults.rows;
       return next();
     }catch(error)  {
