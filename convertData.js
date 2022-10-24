@@ -1,6 +1,6 @@
 const fs = require('fs');
 const data = require('./NewYorkResults.json');
-
+const dataArray = require('./simpleData.json');
 
 function reduceArray(array) {
   const newDataArray = [];
@@ -10,14 +10,18 @@ function reduceArray(array) {
   const jsonData = JSON.stringify(newDataArray);
   return jsonData;
 };
+reduceArray(data);
 
-/**function getEventIds(array) {
+
+function getEventIds(array) {
   const eventIdArray =[];
-  newDataArray.forEach(el => {
-    eventIdArray.push(el[id])
+  dataArray.forEach(el => {
+    eventIdArray.push(el.id)
   })
   return eventIdArray;
-}; */
+}; 
+
+console.log(getEventIds(dataArray));
 
 
-console.log(reduceArray(data))
+
