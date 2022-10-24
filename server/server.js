@@ -9,6 +9,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.get('/events', eventController.getEvents, (req, res) => {
+  console.log(res.locals.eventList);
   return res.status(200).json(res.locals.eventList)
 });
 

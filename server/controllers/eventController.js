@@ -9,9 +9,9 @@ const eventController = {
   getEvents: async(req, res, next) => {
     console.log('this is eventController')
     try{
-      const queryEvents = 'SELECT * FROM simple_events LIMIT 10';
-      let queryResults = await db.query(queryEvent);
-      console.log('this is queryResults' + queryResults);
+      const queryEvents = 'SELECT * FROM simple_events LIMIT 10;';
+      let queryResults = await db.query(queryEvents);
+      console.log('this is queryResults' + JSON.stringify(queryResults.rows));
       res.locals.eventList = queryResults.rows;
       return next();
     }catch(error)  {
