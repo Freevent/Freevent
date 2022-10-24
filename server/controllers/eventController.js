@@ -24,15 +24,6 @@ const eventController = {
     }
   };
    
-
-  
-  
-
-
-
-
-
-
   //   deleteEvent: async(req, res, next) => {
   //     try{
   //       const { eventName } = req.body;
