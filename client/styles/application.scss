@@ -134,9 +134,10 @@ body {
     flex-wrap: wrap;
     padding: 5%;
     background-color: $displayColor;
+    overflow: hidden;
+    overflow-y: scroll;
 
     .eventCard {
-        height: 50%;
         width: 25%;
         border-radius: 5px;
         display: flex;
@@ -148,7 +149,6 @@ body {
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
         .info {
-            height: 75%;
             width: 80%;
             display: flex;
             flex-direction: column;
@@ -156,6 +156,7 @@ body {
             padding: 5%;
             background-color: $displayColor;
             border-radius: 5px 5px 0 0;
+            font-size: 2vh;
 
             span {
                 font-weight: bold;
