@@ -13,10 +13,14 @@ const eventsReducer = (state = initialState, action) => {
             }
         case types.DELETE_EVENT: // input: single event id
             const deleteOneArr = [];
-            for (let i = 0; i < state.eventList; i++) {
+            console.log('action payload', action.payload)
+            console.log('event list', state.eventList)
+            for (let i = 0; i < state.eventList.length; i++) {
                 // push to deletedOneArr if it does NOT match the specified eventID to be deleted
-                if (state.eventList[i].eventID !== action.payload) deleteOneArr.push(state.eventList[i]);
+                if (state.eventList[i].id !== action.payload) deleteOneArr.push(state.eventList[i])
             }
+
+            console.log('hello', deleteOneArr, 'goodbye')
             return { // return updated state with new array which has specified event deleted from it
                 ...state,
                 eventList: deleteOneArr,

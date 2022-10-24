@@ -2,12 +2,16 @@ import React, { useState } from 'react';
 import Button from './Button';
 
 const EventCard = (props) => {
-    console.log(props)
+
+    const deleteItem = (eventId) => {
+        props.deleteEvent(eventId)
+    }
     const {
         name,
         start_date,
         summary,
-        address
+        address,
+        id
     } = props.event
     const date = start_date.slice(0, 10)
     return (
@@ -19,7 +23,7 @@ const EventCard = (props) => {
                 <span>Where:</span> {address}
             </div>
             <div className='buttonWrapper'>
-                <Button />
+                <Button id={id} deleteItem={deleteItem}/>
             </div>
         </div>
     )
