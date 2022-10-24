@@ -9,7 +9,7 @@ const eventController = {
   getEvents: async(req, res, next) => {
     console.log('this is eventController')
     try{
-      const queryEvents = 'SELECT * FROM simple_events LIMIT 10;';
+      const queryEvents = 'SELECT * FROM simple_events LIMIT 100;';
       let queryResults = await db.query(queryEvents);
       res.locals.eventList = queryResults.rows;
       return next();
