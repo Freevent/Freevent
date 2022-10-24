@@ -13,6 +13,15 @@ app.get('/events', eventController.getEvents, (req, res) => {
   return res.status(200).json(res.locals.eventList)
 });
 
+app.post('/events/city', eventController.getCityEvents, (req, res) => {
+  console.log(res.locals.eventList);
+  return res.status(200).json(res.locals.eventList)
+});
+
+app.post('/events/outside', eventController.getOutdoorEvents, (req, res) => {
+  console.log(res.locals.eventList);
+  return res.status(200).json(res.locals.eventList)
+});
 
 app.delete('/delete', eventController.deleteEvent, (req, res) => {
   return res.status(202).json(console.log('event deleted'))
