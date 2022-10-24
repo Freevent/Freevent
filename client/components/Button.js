@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 
 
 const Button = (props) => {
+    const { deleteItem, id } = props;
     return (
-        <button></button>
+        <button onClick={() => deleteItem(id)}></button>
     )
 }
 

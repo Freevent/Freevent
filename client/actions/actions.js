@@ -5,8 +5,8 @@ export const updateEventListActionCreator = selectionOptionsArr => ({
     payload: selectionOptionsArr,
 });
 
-export const deleteEventActionCreator = eventID => ({
+export const deleteEventActionCreator = eventId => ({
     type: types.DELETE_EVENT,
-    payload: eventID,
+    payload: eventId,
 });
 
