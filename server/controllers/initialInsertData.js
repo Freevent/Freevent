@@ -1,25 +1,3 @@
-// const data = require('../../NewYorkResults.json');
-
-// const events = [];
-// data.forEach(ele => {
-  
-  // const id = ele.id;
-  // const name = ele.name;
-  // const start_date = ele.start_date;
-  // const primary_venue_id = ele.primary_venue_id;
-  // const summary = ele.summary;
-  // const image = ele['image.url'];
-  // const value = ele['ticket_availability.maximum_ticket_price.major_value'];
-  // const primary_venue = ele['primary_venue.name'];
-  // const address = ele['primary_venue.address.localized_address_display'];
-  // const city = ele['primary_venue.address.city'];
-  // const ticket_availabile = ele['ticket_availability.has_available_tickets'];
-
-//   console.log(
-//     `INSERT INTO simple_events VALUES('${id}', '${name}', ${start_date}, '${primary_venue_id}', '${summary}', '${image}', ${value}, '${primary_venue}', '${address}', '${city}', ${ticket_availabile});`
-//   )
-// })
-
 const db = require('../models/eventModel');
 const data = require('../../NewYorkResults.json');
 
@@ -62,4 +40,4 @@ eventController.insertData = async () => {
   }
 };
 
-eventController.insertData();
+// eventController.insertData();
