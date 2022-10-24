@@ -12,7 +12,7 @@ const OptionsComponent = (props) => {
                 place = opts[i].value;
             }
         }
-        if (place) {
+        if (typeof(place) === 'string') {
             axios.post('/events/outside', { city: selection.value, locale: place})
                 .then(res => props.updateEvents(res.data))
                 .catch(err => console.log(err))
